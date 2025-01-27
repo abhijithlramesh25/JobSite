@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Your Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+         body {
+            background-image: url('{{ image_url }}');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            font-family: "Autumn in November, cursive";
+            font-size: 250px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .sub-header {
+            font-family: "Autumn in November, cursive";
+            font-size: 32px;
+            margin: 110px 0;
+            text-align: center;
+            
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Nirvana</div>
+    <div class="sub-header">Unlock Your Next Chapter</div>
+    <h1>Enter Your Name</h1>
+    <form action="{{ url_for('process_name') }}" method="POST">
+    
+        <input type="text" id="name" name="name" required>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</body>
+</html>

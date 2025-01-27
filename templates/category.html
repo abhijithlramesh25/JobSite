@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category }} Jobs</title>
+    <style>
+        body {
+            background-image: url('{{ image_url }}'); 
+            background-size: cover;
+            background-position: center;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: left;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ category }} Jobs</h1>
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <a href="{{ url_for('job', category_name=category, job_id=loop.index0) }}">{{ job.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

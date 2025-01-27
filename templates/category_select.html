@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Category</title>
+    <style>
+        body {
+            background-image: url('{{ image_url }}');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Category</h1>
+    <ul>
+        <li><a href="{{ url_for('category', category_name='Accounting_Finance') }}">Accounting & Finance</a></li>
+        <li><a href="{{ url_for('category', category_name='Engineering') }}">Engineering</a></li>
+        <li><a href="{{ url_for('category', category_name='Healthcare_Nursing') }}">Healthcare & Nursing</a></li>
+        <li><a href="{{ url_for('category', category_name='Sales') }}">Sales</a></li>
+    </ul>
+</body>
+</html>
